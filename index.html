@@ -6,13 +6,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>マツダ ミチルのポートフォリオ</title>
   <link rel="stylesheet" href="./style.css">
+  <script src="./js/three.js"></script>
+  <script src="https://unpkg.com/three@0.140.2/build/three.min.js"></script>
+    <script>
+      // ページの読み込みを待つ
+      window.addEventListener('DOMContentLoaded', init);
+      function init() {
+        // サイズを指定
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        let rot = 0;
+
+        // レンダラーを作成
+        const renderer = new THREE.WebGLRenderer({
+          canvas: document.querySelector('#myCanvas'),
+        });
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(width, height);
+        
+        // シーンを作成
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color( 'transparent' );
+
+        // カメラを作成
+        const camera = new THREE.PerspectiveCamera(45, width / height);
+        camera.position.set(30, 20, 30);
+        camera.lookAt(new THREE.Vector3(0, 0, 0));
+
+
+        // 直方体を作成
+        const material = new THREE.MeshNormalMaterial( { color: 0x00ff00 } );
+        const geometry = new THREE.DodecahedronGeometry( 15,0 );
+
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        tick();
+
+        // 毎フレーム時に実行されるループイベントです
+        function tick() {
+          mesh.rotation.x += 0.01;
+          mesh.rotation.y += 0.01;
+
+          // レンダリング
+          renderer.render(scene, camera);
+
+          requestAnimationFrame(tick);
+        }
+      }
+      
+    </script>
 </head>
 <body>
+  <script>
+    
+    // const scene = new THREE.Scene();
+    // scene.background = new THREE.Color( 'transparent' );
+    // const camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.5, 300 );
+
+    // const renderer = new THREE.WebGLRenderer();
+    // renderer.setSize( window.innerWidth, window.innerHeight );
+    // document.body.appendChild( renderer.domElement );
+    // const geometry = new THREE.DodecahedronGeometry( 1,0 );
+    // const material = new THREE.MeshNormalMaterial( { color: 0x00ff00 } );
+    // const cube = new THREE.Mesh( geometry, material );
+    // scene.add( cube );
+
+    // camera.position.z = 5;
+    // function animate() {
+    //   requestAnimationFrame( animate );
+    //   cube.rotation.x += 0.01;
+    //   cube.rotation.y += 0.01;
+    //   renderer.render( scene, camera );
+    // };
+
+    // animate();
+  </script>
   <header>
+    <div>
+      <!-- Three.js用のcanvasタグ -->
+      <canvas id="myCanvas"></canvas>
+    </div>
     <div class="mainvisual">
       <div class="mainvisual_inner">
         <p class="mainvisual_copy">共創するから<br  class="sp" />おもしろい。</p>
-        <App />
+        
         <h1 class="title">
         マツダ ミチルのポートフォリオ<br />
         <span>PORTFOLIO SITE</span>
@@ -89,5 +167,6 @@
   <footer class="footer">
   MICHIRU MATSUDA PORTFOLIO
   </footer>
+  
 </body>
 </html>
