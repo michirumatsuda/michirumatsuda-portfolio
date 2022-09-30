@@ -142,7 +142,7 @@ legend {
   position: absolute;
   margin: 0;
   z-index: 1;
-  top: 300px;
+  top: 350px;
 }
 .mainvisual .title span {
   font-size: 5.625rem;
@@ -244,45 +244,6 @@ legend {
   justify-content: space-between;
   position: relative;
   z-index: 1;
-}
-.theme::before {
-  content: "";
-  display: block;
-  width: 1200px;
-  height: 1200px;
-  position: absolute;
-  background: linear-gradient(90deg, #4158D0, #C850C0 30%, #FFCC70);
-  background: -webkit-linear-gradient(0deg, #4158D0, #C850C0 30%, #FFCC70);
-  opacity: 0.4;
-  border-radius: 1200px;
-  right: -600px;
-  top: 100px;
-  transform: rotate(90deg);
-  z-index: -1;
-}
-@media (max-width: 1024px) {
-  .theme::before {
-    display: none;
-  }
-}
-.theme::after {
-  content: "";
-  display: block;
-  width: 661px;
-  height: 661px;
-  position: absolute;
-  background: linear-gradient(90deg, #4158D0, #C850C0 30%, #FFCC70);
-  background: -webkit-linear-gradient(0deg, #4158D0, #C850C0 30%, #FFCC70);
-  opacity: 0.5;
-  transform: rotate(-90deg);
-  border-radius: 661px;
-  left: -260px;
-  top: 1300px;
-}
-@media (max-width: 1024px) {
-  .theme::after {
-    display: none;
-  }
 }
 @media (max-width: 1024px) {
   .theme {
