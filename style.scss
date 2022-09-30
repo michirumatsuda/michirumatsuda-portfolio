@@ -67,6 +67,8 @@ legend {
 $yellow: #ff5879;
 
 
+
+
 @mixin sp {
   @media (max-width: 1024px) {
     @content;
@@ -92,7 +94,6 @@ $yellow: #ff5879;
 
 
 .container {
-  overflow: hidden;
   width: 100%;
   font-family: 'Noto Sans JP', sans-serif;
   a {
@@ -123,13 +124,12 @@ $yellow: #ff5879;
     letter-spacing: -0.08em;
     position: absolute;
     top: -80px;
+    right: 0;
     margin: 0;
     line-height: 1.2;
     right: 0px;
     display: inline-block;
-    color: #fff;
-    opacity: 0.7;
-    background-color: #C850C0;
+    color: $yellow;
     z-index: 1;
     @include sp {
       font-size: 1.75rem;
@@ -137,10 +137,9 @@ $yellow: #ff5879;
       width: 100%;
       text-align: right;
       padding: 2px;
-      background-color: transparent;
-      color: #C850C0;
       top: -60px;
       margin-right: 20px;
+      top: -20px;
     }
   }
   .title {
