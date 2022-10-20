@@ -318,6 +318,37 @@ legend {
     letter-spacing: -0.05em;
   }
 }
+.skill_tool {
+  width: 70%;
+  max-width: 800px;
+  margin: 60px auto 0;
+  background-color: #fff;
+  padding: 40px 80px;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+@media (max-width: 1024px) {
+  .skill_tool {
+    padding: 20px;
+    width: 100%;
+  }
+}
+.skill_tool h4 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  letter-spacing: 0.05em;
+}
+.skill_tool_inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.skill_tool_inner img {
+  display: block;
+  margin: 10px;
+}
 
 .works {
   width: 90%;
