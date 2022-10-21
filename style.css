@@ -414,6 +414,7 @@ legend {
 }
 .works_list_item_title {
   position: absolute;
+  text-align: center;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -427,7 +428,19 @@ legend {
   height: 100%;
   background-color: #000;
   margin: 0;
-  line-height: 300px;
+  padding-top: 120px;
+  box-sizing: border-box;
+}
+@media (max-width: 1024px) {
+  .works_list_item_title {
+    padding-top: 40px;
+    font-size: 0.875rem;
+  }
+}
+.works_list_item_title span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
 }
 .works_list_item:hover {
   transition: 0.2s ease-in;
